@@ -19,7 +19,7 @@ function ProductArea({category}) {
 
     return (
         <>
-            <main className='bg-hero-img py-12' >
+            <main className='bgImg2 py-12' >
                 <section className='flex w-full flex-col lg:flex-row justify-center items-center  flex-wrap gap-10'>
                     {items.map((item, index)=>{
                         return (

@@ -11,3 +11,12 @@
 input::placeholder{
     text-align: center;
 }
+
+.bgImg {
+  background-image: url(./assets/bg-2.jpg);
+}
+
+
+.bgImg2 {
+  background-image: url(./assets/bg.jpg);
+}
