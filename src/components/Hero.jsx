@@ -15,7 +15,7 @@ function Hero({children}) {
                 initial={{}}
                 animate= {{}}
                 transition={{}}
-                className='h-[45vh] md:h-[50vh] lg:h-[60vh] bg-hero-img2 bg-cover bg-center flex flex-col justify-end'>
+                className={`h-[45vh] md:h-[50vh] lg:h-[60vh] bg-hero-img2 bg-cover bg-center flex flex-col justify-end`}>
                     {children}
                     
                 </motion.div>
