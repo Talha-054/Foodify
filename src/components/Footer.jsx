@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className=" text-white flex flex-col justify-center items-center" style={{ height: '50vh', backgroundImage: 'linear-gradient(to top, red , black 75%)' }}>
+        <footer className=" text-white flex flex-col justify-center items-center" style={{ height: '50vh', backgroundImage: 'linear-gradient(to top, red , black 10%, white)' }}>
             <div className="text-center">
                 
                 <p className="text-lg mb-2">Foodify Inc</p>

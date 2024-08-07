@@ -3,15 +3,10 @@ import { motion } from 'framer-motion';
 import CartButton from './CartButton';
 
 
+
 function Header() {
 
     
-
-    
-
-    // useEffect(()=>{
-    //     console.log('header-rendered')
-    // })
 
     return (
         <>

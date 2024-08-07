@@ -1,13 +1,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function Loader() {
 
 
-    // useEffect(()=>{
-    //     console.log('loader-rendered')
-    // })
+    const navigate = useNavigate()
+    
+    useEffect(()=>{
+        setTimeout(()=>{
+            let user = localStorage.getItem('currUser')
+            user? null : navigate('/login')
+            console.log(user)
+        },2000)
+        
+    })
 
 
     return (
