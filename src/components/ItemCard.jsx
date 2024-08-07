@@ -12,7 +12,7 @@ function ItemCard({name, description, price, img}) {
 
 
     useEffect(()=>{
-        console.log("reached useEffect")
+        
         let currItem = cart.find((item)=> item.name == name)
         if (currItem){
             setItemAdded(true)
@@ -24,7 +24,7 @@ function ItemCard({name, description, price, img}) {
         
     },[cart])
 
-    console.log("item-card-updated")
+    // console.log("item-card-updated")
     
 
 

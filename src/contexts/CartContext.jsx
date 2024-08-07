@@ -5,7 +5,15 @@ export const CartContext = createContext();
 
 
 export default function CartContextProvider ({children}){
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([
+        // {
+        //     productId: '',
+        //     name: '',
+        //     description: '',
+        //     price: '',
+        //     quantity: ''
+        // }
+    ]);
 
     return (
         <CartContext.Provider value={[cart, setCart]}>

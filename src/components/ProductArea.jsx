@@ -1,27 +1,55 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemCard from './ItemCard'
 import productImg from '../assets/product.jpg'
-import { products } from '../products/products'
+import { getAllProducts } from '../firebase/auth'
+import { useParams } from 'react-router-dom'
+import Header from './Header'
+import Footer from './Footer'
 
 
 
-function ProductArea({category}) {
 
+
+
+function ProductArea() {
+
+    let params = useParams()
     
 
-    let items = products[category]
+    let [products, setProducts] = useState()
+    let category = params.storeName
 
     useEffect(()=>{
-        console.log('product-Area-rendered')
-    })
+        getAllProducts().then((res)=>{
+            res.forEach((record)=>{
+                record.store == category? setProducts(record.products): null
+            })
+            
+        })
+    },[category])
 
     
 
+    
+
+    
+
+    
+
+    
     return (
         <>
-            <main className='bgImg2 py-12' >
-                <section className='flex w-full flex-col lg:flex-row justify-center items-center  flex-wrap gap-10'>
-                    {items.map((item, index)=>{
+            <Header />
+            <main className='bgImg2  pt-12 h-screen w-screen overflow-auto' >
+                <section className='flex flex-col lg:flex-row justify-center items-center pb-12  flex-wrap gap-10'>
+
+
+
+                    
+
+
+                    
+                    {products?.map((item, index)=>{
                         return (
                             <ItemCard key={item.name.toLowerCase()} 
                                       name={item.name} 
@@ -31,6 +59,7 @@ function ProductArea({category}) {
                         )
                     })}
                 </section>
+                
             </main>
         </>
     )

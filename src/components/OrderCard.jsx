@@ -20,9 +20,9 @@ function OrderCard({price, item, uniqueId}) {
     }
 
 
-    useEffect(()=>{
-        console.log('order-card-rendered')
-    })
+    // useEffect(()=>{
+    //     console.log('order-card-rendered')
+    // })
 
     return (
         <>

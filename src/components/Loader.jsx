@@ -5,9 +5,9 @@ import { useEffect } from 'react'
 function Loader() {
 
 
-    useEffect(()=>{
-        console.log('loader-rendered')
-    })
+    // useEffect(()=>{
+    //     console.log('loader-rendered')
+    // })
 
 
     return (
@@ -15,7 +15,7 @@ function Loader() {
             <motion.div
             initial={{}}
             animate={{ display:'none'}}
-            transition={{duration:3}} 
+            transition={{duration:2}} 
             className='bg-purple-500 h-screen top-0 z-50 w-screen overflow-hidden fixed flex justify-center items-center'>
 
                 <motion.div 

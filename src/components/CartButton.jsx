@@ -14,9 +14,9 @@ function CartButton() {
         setBackdropStatus(true)
     }
 
-    useEffect(()=>{
-        console.log('cart-button-comp rendered')
-    })
+    // useEffect(()=>{
+    //     console.log('cart-button-comp rendered')
+    // })
 
     return (
         <>

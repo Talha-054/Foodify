@@ -2,11 +2,14 @@ import React from 'react'
 import { motion} from 'framer-motion'
 import { useEffect } from 'react'
 
+
 function Hero({children}) {
 
-    useEffect(()=>{
-        console.log('hero-comp-rendered')
-    })
+    
+
+    // useEffect(()=>{
+    //     console.log('hero-comp-rendered')
+    // })
 
     return (
         <>
