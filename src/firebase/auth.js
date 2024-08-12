@@ -241,14 +241,13 @@ export const getAllProducts = async ()=>{
     try {
         let res = await get(child(dbRef,'/users'))
         let users = res.val()
-        console.log(users)
         let arr = []
         let products = []
         
         for (let user in users){  
             arr.push(users[user])
         }
-        console.log(arr)
+      
         for (let obj of arr){
             for (let key in obj){
                 if (key == 'username' || key == 'password' || key == 'storeExist'){
@@ -261,7 +260,7 @@ export const getAllProducts = async ()=>{
                 }
             }
         }
-        console.log( 'products are',products)
+       
         users = ''
         return products
         

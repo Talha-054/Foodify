@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { CartContext } from '../contexts/CartContext'
-import { useContext } from 'react'
 import { motion } from 'framer-motion';
+import { useSelector, useDispatch } from 'react-redux'
+import { addToCart, removeByName } from '../slices/cartSlice';
 
 function ItemCard({name, description, price, img}) {
 
-    const [cart, setCart] = useContext(CartContext);
+    const cart = useSelector(state=>state.cart)
     const [itemAdded, setItemAdded] = useState(false);
 
-    
+    const dispatch = useDispatch();
 
 
     useEffect(()=>{
@@ -29,12 +29,10 @@ function ItemCard({name, description, price, img}) {
 
 
 
-    function addToCart(e){
+    function addCart(e){
 
         if (itemAdded){
-            let updatedCart = cart.filter((item)=> item.name != name)
-            setCart([...updatedCart])
-            // setItemAdded(!itemAdded)
+            dispatch(removeByName(name))
             
         }else{
             let obj = {
@@ -43,7 +41,7 @@ function ItemCard({name, description, price, img}) {
                 total: price
             }
     
-            setCart(prevCart => [...prevCart, obj])
+            dispatch(addToCart(obj))
             // setItemAdded(!itemAdded)
         }
 
@@ -52,7 +50,7 @@ function ItemCard({name, description, price, img}) {
 
     return (
         <>
-            <div className='w-[380px] h-[450px] break-words flex flex-col items-center p-4 rounded-2xl shadow-lg bg-white/90 backdrop-blur-[2px] hover:cursor-pointer  hover:shadow-2xl duration-500 '>
+            <div className='w-[350px] h-[450px] break-words flex flex-col items-center p-4 rounded-2xl shadow-lg bg-white/90 backdrop-blur-[2px] hover:cursor-pointer  hover:shadow-2xl duration-500 '>
                 <div className='flex justify-start w-full mb-2 pl-1'>
                     <h1 className='text-xl text-black/90 font-semibold'>{name}</h1>
                 </div>
@@ -70,7 +68,7 @@ function ItemCard({name, description, price, img}) {
                 <div className='w-full flex justify-between pl-1 mt-4 items-center '>
                     <h1 className='font-bold text-black/90 text-lg'>{price} $</h1>
                     <motion.div>
-                        <button   onClick={addToCart} className='px-4 py-2 bg-purple-200 rounded-full text-black/80 font-semibold hover:bg-purple-300 hover:scale-x-105 duration-75'>{itemAdded? 'Item Added to Cart': 'Add To Cart'} <span className='text-xl text-black'>{itemAdded? '✅':'🛒'}</span></button>
+                        <button   onClick={addCart} className='px-4 py-2 bg-purple-200 rounded-full text-black/80 font-semibold hover:bg-purple-300 hover:scale-x-105 duration-75'>{itemAdded? 'Item Added to Cart': 'Add To Cart'} <span className='text-xl text-black'>{itemAdded? '✅':'🛒'}</span></button>
                     </motion.div>
                 </div>
 

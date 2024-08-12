@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
-import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { removeByIndex } from '../slices/cartSlice'
 
 
 function OrderCard({price, item, uniqueId}) {
 
+    const dispatch = useDispatch()
+
+
     const [quantity, setQuantity] = useState()
-    const [cart, setCart] = useContext(CartContext);
+    const cart = useSelector(state=>state.cart)
 
     function handleQuantity(e){
         if (parseInt(e.target.value) < 0) return;
@@ -15,9 +17,10 @@ function OrderCard({price, item, uniqueId}) {
     }
 
     function delFromCart(e){
-        let updatedCart = cart.filter((item,index)=> e.target.id != index)
-        setCart([...updatedCart])
+        dispatch(removeByIndex(e.target.id))
     }
+
+    console.log(cart)
 
 
     // useEffect(()=>{

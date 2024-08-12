@@ -10,6 +10,9 @@ import Login from './components/Login.jsx'
 import SignUp from './components/SignUp.jsx'
 import CreateStore from './components/CreateStore.jsx'
 import ProductArea from './components/ProductArea.jsx'
+import { Provider } from 'react-redux'
+import { store } from './store/store.js'
+
 
 
 
@@ -48,11 +51,12 @@ import ProductArea from './components/ProductArea.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-  <CartContextProvider>
-    <ModelContextProvider>
-      <RouterProvider router={router} />
-    </ModelContextProvider>
-  </CartContextProvider>
+ 
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+      
+  
 
   
   

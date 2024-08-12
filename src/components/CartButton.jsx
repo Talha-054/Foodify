@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
-import { ModalContext } from '../contexts/ModalContext';
-import { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext'
 import { motion } from 'framer-motion';
 import Modal from './Modal';
+import { useSelector, useDispatch } from 'react-redux';
+import { hide, show } from '../slices/modalSlice';
 
 function CartButton() {
 
-    const [backdropStatus, setBackdropStatus] = useContext(ModalContext);
-    const [cart, setCart] = useContext(CartContext);
+    const dispatch = useDispatch()
+
+    const backdropStatus = useSelector(state=>state.backdrop)
+    const cart = useSelector(state=>state.cart)
 
     function handleBackdrop(){
-        setBackdropStatus(true)
+        dispatch(show())
     }
 
     // useEffect(()=>{

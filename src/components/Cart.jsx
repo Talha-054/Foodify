@@ -1,19 +1,20 @@
 import React from 'react'
 import cartImg from '../assets/cart.png'
 import OrderCard from './OrderCard'
-import { ModalContext } from '../contexts/ModalContext'
-import { useContext } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import { useSelector, useDispatch } from 'react-redux'
+import { hide, show } from '../slices/modalSlice'
 import { useEffect } from 'react'
 
 
 function Cart() {
 
-    const [backdropStatus, setBackdropStatus] = useContext(ModalContext);
-    const [cart, setCart] = useContext(CartContext);
+    const dispatch = useDispatch()
+
+    const backdropStatus = useSelector(state=>state.backdrop)
+    const cart = useSelector(state=>state.cart)
 
     function handleBackdrop(){
-        setBackdropStatus(false)
+        dispatch(hide())
     }
 
     useEffect(()=>{
