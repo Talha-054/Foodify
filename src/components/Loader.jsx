@@ -12,7 +12,7 @@ function Loader() {
         setTimeout(()=>{
             let user = localStorage.getItem('currUser')
             user? null : navigate('/login')
-            console.log(user)
+            
         },2000)
         
     })
@@ -30,7 +30,7 @@ function Loader() {
                 animate={{rotate:360}}
                 transition={{repeat:Infinity, duration:1.3, type:'spring'}}>
                 
-                    <span className='text-9xl rounded-full'>🍴
+                    <span className='text-4xl lg:text-9xl rounded-full'>🍴
                     </span>
                 </motion.div>
 

@@ -9,7 +9,7 @@ function Modal() {
 
     return (
         <>
-            <div id='backdrop' className=' flex-col  fixed top-0 left-0 flex justify-start items-center  overflow-hidden bg-black/80 z-10 h-screen w-screen'>
+            <div id='backdrop' className=' flex-col  fixed top-[-1%] left-[0%] flex justify-start items-center  overflow-hidden bg-black/80 z-10 h-screen w-full'>
 
                 
                 <Cart />

@@ -18,7 +18,7 @@ function Header() {
                 className='flex rounded-full bg-opacity-25 shadow-lg bg-purple-200 justify-between px-4 lg:px-8 py-4 items-center backdrop-blur-[3px]'>
                     <div>
                         <h1 className='text-3xl font-bold hover:cursor-pointer hover:scale-x-105 duration-200'>
-                            <span className='text-[#FFB200]'>F</span>
+                            <span className='text-[#FFB200] text-4xl'>F</span>
                             <span className='text-black/60'>OOD</span>
                             <span className='pl-2 text-black/70'>APP</span>
                         </h1>

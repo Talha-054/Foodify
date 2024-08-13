@@ -85,7 +85,7 @@ function CreateStore() {
     
 
     return (
-        <section className='bgImg2  h-screen overflow-hidden flex flex-col justify-start items-center px-8'>
+        <section className='bgImg2 bg-cover  h-screen overflow-hidden flex flex-col justify-start items-center px-8'>
 
             <span onClick={goBack} className='absolute text-4xl top-0 left-0 p-8 hover:cursor-pointer hover:scale-110 duration-200'>
                 ⬅️
@@ -93,11 +93,11 @@ function CreateStore() {
 
             { 
             (!createStore && !hasStore) && <div className='flex flex-col lg:flex-row p-4 gap-12 lg:gap-6  my-auto '>
-                <button onClick={addStore} className='px-6 py-3  backdrop-blur-[2px] hover:backdrop-blur-lg duration-300 lg:text-4xl text-2xl rounded-full text-white/90 bg-black/10 shadow-inner shadow-black'>
+                <button onClick={addStore} className='px-6 py-3  backdrop-blur-[2px] hover:backdrop-blur-lg duration-300 lg:text-4xl text-2xl rounded-full text-white/90 bg-black/10 shadow-inner shadow-white hover:bg-black/30'>
                     Create Store
                 </button>
 
-                <button onClick={havStore} className='px-6 py-4  backdrop-blur-[2px] hover:backdrop-blur-lg duration-300 text-2xl rounded-full text-white/90 bg-black/10 shadow-inner shadow-black lg:text-4xl'>
+                <button onClick={havStore} className='px-6 py-4  backdrop-blur-[2px] hover:backdrop-blur-lg duration-300 text-2xl rounded-full text-white/90 bg-black/10 shadow-inner shadow-white lg:text-4xl hover:bg-black/30'>
                     Already have a Store
                 </button> 
             </div>
@@ -106,7 +106,7 @@ function CreateStore() {
 
             {
 
-            (hasStore && !error) && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-full text-white/90 bg-black/10 py-16 shadow-inner shadow-black'>
+            (hasStore && !error) && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-full text-white/90 bg-black/10 py-16 shadow-inner shadow-white hover:bg-black/30'>
                     <div className='flex flex-col gap-1 justify-center  '>
                         <label className='mx-auto pl-3 font-medium' htmlFor="name">Store Name</label>
                         <input ref={storeRef} type="text" className='w-[350px] px-2 py-2 rounded-2xl outline-purple-500 text-black' />
@@ -117,7 +117,7 @@ function CreateStore() {
 
 
             {
-                (createStore && !error) && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-full text-white/90 bg-black/10 py-16 shadow-inner shadow-black'>
+                (createStore && !error) && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-full text-white/90 bg-black/10 py-16 shadow-inner shadow-white hover:bg-black/30'>
                     <div className='flex flex-col gap-1 justify-center  '>
                         <label className='mx-auto pl-3 font-medium' htmlFor="name">Store Name</label>
                         <input ref={storeRef} type="text" className='w-[350px] px-2 py-2 rounded-2xl outline-purple-500 text-black' />
@@ -128,7 +128,7 @@ function CreateStore() {
 
 
             {
-                error && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-xl text-white/90  py-16   shadow-inner shadow-black'>
+                error && <div className='my-auto p-8 backdrop-blur-[2px] hover:backdrop-blur-lg duration-300  rounded-xl text-white/90  py-16   shadow-inner shadow-white hover:bg-black/30'>
                     <p  className='text-xl font-medium '>{errorMsg}</p>
                 </div> 
                 

@@ -40,7 +40,7 @@ function ProductArea() {
     return (
         <>
             <Header />
-            <main className='bgImg2  pt-32 h-screen w-screen overflow-auto' >
+            <main className='bgImg2 bg-cover  pt-32 h-screen w-screen overflow-auto' >
                 <section className='flex flex-col lg:flex-row justify-center items-center pb-12  flex-wrap gap-10'>
 
 

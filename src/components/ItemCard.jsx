@@ -50,13 +50,13 @@ function ItemCard({name, description, price, img}) {
 
     return (
         <>
-            <div className='w-[350px] h-[450px] break-words flex flex-col items-center p-4 rounded-2xl shadow-lg bg-white/90 backdrop-blur-[2px] hover:cursor-pointer  hover:shadow-2xl duration-500 '>
+            <div className='lg:w-[400px] w-[300px] h-[450px] break-words flex flex-col items-center p-4 rounded-2xl shadow-inner bg-black/60 lg:bg-black/50 shadow-white/60  backdrop-blur-[2px] hover:cursor-pointer  hover:bg-black/60 duration-500 '>
                 <div className='flex justify-start w-full mb-2 pl-1'>
-                    <h1 className='text-xl text-black/90 font-semibold'>{name}</h1>
+                    <h1 className='text-xl text-white/80 font-semibold'>{name}</h1>
                 </div>
 
                 <div className='w-full pl-1 h-[50px]'>
-                    <p className='text-black/90'>{description}</p>
+                    <p className='text-white/80'>{description}</p>
                 </div>
 
                 <div className='w-full h-[300px] my-3'>
@@ -66,16 +66,16 @@ function ItemCard({name, description, price, img}) {
                 </div>
 
                 <div className='w-full flex justify-between pl-1 mt-4 items-center '>
-                    <h1 className='font-bold text-black/90 text-lg'>{price} $</h1>
+                    <h1 className='font-bold text-white/80 text-lg'>{price} $</h1>
                     <motion.div>
-                        <button   onClick={addCart} className='px-4 py-2 bg-purple-200 rounded-full text-black/80 font-semibold hover:bg-purple-300 hover:scale-x-105 duration-75'>{itemAdded? 'Item Added to Cart': 'Add To Cart'} <span className='text-xl text-black'>{itemAdded? '✅':'🛒'}</span></button>
+                        <button   onClick={addCart} className='px-4 py-2 bg-purple-200 rounded-full text-black/80 font-semibold hover:bg-purple-400 hover:scale-x-105 duration-200'>{itemAdded? 'Item Added to Cart': 'Add To Cart'} <span className='text-xl text-black'>{itemAdded? '✅':'🛒'}</span></button>
                     </motion.div>
                 </div>
 
                 <div className='w-full flex justify-between items-center'>
 
                     {/* <div className='pt-2'>
-                        <label htmlFor="amount" className='mx-1 text-black/90 text-md font-bold'>Amount</label>
+                        <label htmlFor="amount" className='mx-1 text-white/80 text-md font-bold'>Amount</label>
                         <input type="number" id='amount' className='px-2 py-1 rounded-full bg-purple-200 max-w-[100px]' />
                     </div> */}
 

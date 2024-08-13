@@ -71,9 +71,9 @@ function AddProduct() {
 
     return (
         <>
-            <section className='bgImg2  h-screen overflow-hidden flex flex-col justify-start items-center px-8'>
+            <section className='bgImg2 bg-cover h-screen overflow-hidden flex flex-col justify-start items-center px-8'>
                 
-                <form action="" className='min-w-[350px] p-14 px-20 rounded-2xl mt-14 flex flex-col gap-8 backdrop-blur-[2px] shadow-inner shadow-black/20 hover:backdrop-blur-md duration-300'>
+                <form action="" className='min-w-[350px] p-14 px-20 rounded-2xl mt-14 flex flex-col gap-8 backdrop-blur-[2px] shadow-inner shadow-black/20 hover:backdrop-blur-md duration-300 hover:bg-black/30'>
                     
                     <div className='flex flex-col gap-1 '>
                         <label className='pl-3 text-white/80  text-xl font-medium' htmlFor="name">Product Name</label>

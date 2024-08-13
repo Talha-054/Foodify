@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion';
-import Modal from './Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { hide, show } from '../slices/modalSlice';
+import Modal from './Modal'
+
 
 function CartButton() {
 
+    const backdropStatus = useSelector(state=>state.backdrop)
+    console.log(backdropStatus)
     const dispatch = useDispatch()
 
-    const backdropStatus = useSelector(state=>state.backdrop)
+    
     const cart = useSelector(state=>state.cart)
 
     function handleBackdrop(){

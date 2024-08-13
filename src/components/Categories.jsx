@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-
-import ProductArea from './ProductArea';
 import { useEffect } from 'react'
 import { getAllProducts } from '../firebase/auth';
 import { useNavigate } from 'react-router-dom';
